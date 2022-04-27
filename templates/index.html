@@ -13,20 +13,23 @@
     />
   </head>
   <body>
-    <div id="speechContainer">
-      <h1>Upload new File</h1>
-      <form method="post" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <br />
-        <input type="submit" id="submitButton" value="Detect" />
-      </form>
+    <center>
+      <div id="speechContainer">
+        <h1>Upload new File</h1>
+        <form method="post" enctype="multipart/form-data" class="btn">
+          <input type="file" name="file" />
+          <br />
 
-      {% if ans != "" %}
-      <div id="speechTranscriptContainer">
-        <h1>Prediction</h1>
-        <p id="speechText">{{ ans }}</p>
+          <input type="submit" id="submitButton" value="Detect" />
+        </form>
+
+        {% if ans != "" %}
+        <div id="speechTranscriptContainer">
+          <h1>Prediction</h1>
+          <p id="speechText">{{ ans }}</p>
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-    </div>
+    </center>
   </body>
 </html>
