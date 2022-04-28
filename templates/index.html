@@ -12,14 +12,21 @@
       href="{{ url_for('static', filename='../static/index.css') }}"
     />
   </head>
-  <body>
+  <body class="container">
     <center>
       <div id="speechContainer">
-        <h1>Upload new File</h1>
+        <div class="text-bg">
+          <span>Speech</span>
+          <h1>Emotion Recognition</h1>
+          <p>
+            Upload the .WAV file to detect the emotion of the spearker<br />
+            01 = neutral, 02 = calm, 03 = happy, 04 = sad, 05 = angry, 06 =
+            fearful, 07 = disgust, 08 = surprised
+          </p>
+        </div>
         <form method="post" enctype="multipart/form-data" class="btn">
-          <input type="file" name="file" />
+          <input type="file" name="file" class="file" />
           <br />
-
           <input type="submit" id="submitButton" value="Detect" />
         </form>
 
