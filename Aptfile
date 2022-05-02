@@ -1,5 +1,3 @@
 libsndfile1
-libsndfile-dev
-libavcodec-extra-53 
+libasound2-dev python-dev python-numpy python-setuptools libsndfile-dev
 libavcodec-extra-53
-ffmpeg 
