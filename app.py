@@ -4,7 +4,7 @@ import numpy as np
 import librosa
 import pickle
 
-model = pickle.load(open('modellgbm.pkl','rb'))
+model = pickle.load(open('Models\MLPClassifier.pkl','rb'))
 print(model)
 class SpeechEmotionRecognition:
   def __init__(self,filename,n_mfcc):
@@ -29,13 +29,30 @@ def hello():
             return redirect(request.url)
         if file:
             print(file)
-            n_mfcc=40
+            n_mfcc=128
             obj=SpeechEmotionRecognition(file,n_mfcc)
             obj.ExtractFeatures()
             z=obj.mfcc
             ypr=model.predict([z])
             print(ypr)
         ans=ypr[0]
+        if(ans==1):
+            ans='Neutral'
+        elif(ans==0):
+            ans='Calm'
+        elif(ans==2):
+            ans='Happy'
+        elif(ans==3):
+            ans='Sad'
+        elif(ans==4):
+            ans='Angry'
+        elif(ans==5):
+            ans='Fearful'
+        elif(ans==6):
+            ans='Disgust'
+        elif(ans==7):
+            ans='Surprised'
+
 
 
     return render_template("index.html",ans=ans)
